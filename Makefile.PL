@@ -296,7 +296,7 @@ my %CC_OPTIONS = (
 	DEFINE       => join( ' ', @CC_DEFINE ),
 );
 
-push @LDDLFLAGS, '--no-as-needed -lssl -lcrypto';
+push @LDDLFLAGS, '-Wl,--no-as-needed -lssl -lcrypto';
 
 $CC_OPTIONS{LIBS}      = join ' ', @CC_LIBS if @CC_LIBS;
 $CC_OPTIONS{CCFLAGS}   = join ' ', $Config{ccflags}, @CCFLAGS if @CCFLAGS;
